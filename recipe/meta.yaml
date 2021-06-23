@@ -16,10 +16,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - azure-core >=1.7.0,<2.0.0
     - msrest >=0.6.21
     - azure-common ~=1.1
