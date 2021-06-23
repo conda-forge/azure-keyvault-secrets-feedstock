@@ -1,5 +1,5 @@
 {% set name = "azure-keyvault-secrets" %}
-{% set version = "4.2.0" %}
+{% set version = "4.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,21 +7,21 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
-  sha256: 1083ab900da5ec63c518ffef49d9fdca02c81ddffdf80c52c03cd9da479e021f
+  sha256: 26279ba3a6c727deba1fb61f549496867baddffbf062bd579d6fd2bc04e95276
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - azure-core >=1.7.0,<2.0.0
-    - msrest >=0.6.0
+    - msrest >=0.6.21
     - azure-common ~=1.1
 
 test:
@@ -34,7 +34,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Azure Key Vault Secret client library for Python'
+  summary: Azure Key Vault Secret client library for Python
   doc_url: https://azuresdkdocs.blob.core.windows.net/$web/python/azure-keyvault-secrets/latest/index.html
   dev_url: https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault/azure-keyvault-secrets
 
