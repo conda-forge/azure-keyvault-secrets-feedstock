@@ -1,11 +1,11 @@
-About azure-keyvault-secrets
-============================
+About azure-keyvault-secrets-feedstock
+======================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/azure-keyvault-secrets-feedstock/blob/main/LICENSE.txt)
 
 Home: https://docs.microsoft.com/en-au/azure/key-vault/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/azure-keyvault-secrets-feedstock/blob/main/LICENSE.txt)
 
 Summary: Azure Key Vault Secret client library for Python
 
