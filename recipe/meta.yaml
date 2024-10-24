@@ -1,13 +1,13 @@
 {% set name = "azure-keyvault-secrets" %}
-{% set version = "4.8.0" %}
+{% set version = "4.9.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5636c0a1d8a20e3c5799cb3ccffd4ebf3f0d1acb7cae9526861833af8b0fe814
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2a03bb2ffd9a0d6c8ad1c330d9d0310113985a9de06607ece378fd72a5889fe1
 
 build:
   noarch: python
@@ -19,9 +19,10 @@ requirements:
     - python >=3.7
     - pip
   run:
+    - typing_extensions >=4.0.1
     - python >=3.7
     - azure-common ~=1.1
-    - azure-core <2.0.0,>=1.29.5
+    - azure-core >=1.31.0
     - isodate >=0.6.1
     - typing-extensions >=4.0.1
 
