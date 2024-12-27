@@ -6,26 +6,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 5636c0a1d8a20e3c5799cb3ccffd4ebf3f0d1acb7cae9526861833af8b0fe814
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
-    - azure-common ~=1.1
+    - python >={{ python_min }}
     - azure-core <2.0.0,>=1.29.5
     - isodate >=0.6.1
     - typing-extensions >=4.0.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - azure.keyvault.secrets
     - azure.keyvault.secrets.aio
