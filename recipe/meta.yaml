@@ -1,5 +1,5 @@
 {% set name = "azure-keyvault-secrets" %}
-{% set version = "4.11.3" %}
+{% set version = "4.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 193ba3cf9912ae776fb1ba40d147aa3cbfcf5cda5e0e2e35ef8fbe4c78db1217
+  sha256: 435ea0abb5280baaad9553da7a19e73e1b581048783b852210352bfcb0316aff
 
 build:
   noarch: python
@@ -22,7 +22,7 @@ requirements:
   run:
     - typing_extensions >=4.6.0
     - python >={{ python_min }}
-    - azure-core >=1.31.0
+    - azure-core >=1.37.0
     - isodate >=0.6.1
     - typing-extensions >=4.0.1
 
